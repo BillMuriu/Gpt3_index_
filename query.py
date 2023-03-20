@@ -10,3 +10,5 @@ def CreatevectorIndex(path):
     tokens = 256
     chunk_size = 600
     max_chunk_overlap = 20
+
+    prompt_helper = PromptHelper(max_input, tokens, max_chunk_overlap, chunk_size_limit=chunk_size)
