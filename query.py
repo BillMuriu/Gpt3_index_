@@ -12,3 +12,9 @@ def CreatevectorIndex(path):
     max_chunk_overlap = 20
 
     prompt_helper = PromptHelper(max_input, tokens, max_chunk_overlap, chunk_size_limit=chunk_size)
+
+    # define LLM
+    LLMPredictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-ada-001", max_tokens=tokens))
+
+    #load data
+    docs = SimpleDirectoryReader(path).load_data()
